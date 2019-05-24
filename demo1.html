@@ -1,0 +1,181 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrolling / Entrance Animations</title>
+    <link rel="stylesheet" href="css/app.css">
+    <script type="module" src="node_modules/lax.js/lib/lax.js">
+    <script type="module" src="node_modules/animejs/lib/anime.js">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+</head>
+
+<body class="lax-demo">
+    <script>
+        window.onload = function () {
+            lax.setup() // init
+
+            const updateLax = () => {
+                lax.update(window.scrollY)
+                window.requestAnimationFrame(updateLax)
+            }
+
+            window.requestAnimationFrame(updateLax)
+        }
+    </script>
+    <div class="grid-container" style="padding-bottom: 1000px;">
+        <a href="index.html" style="text-decoration: underline">Return Home</a>
+        <div class="grid-x grid-x-padding">
+            <div class="cell small-12">
+                <h1 class="anim-header">Scrolling / Entrance Animations</h1>
+            </div>
+        </div>
+        <div class="grid-x grid-x-padding">
+            <div class="cell small-12">
+                <h3 class="anim-entrances-title">Entrances</h3>
+            </div>
+        </div>
+        <div class="grid-x grid-x-padding pad-bot">
+            <div class="cell small-4">
+                <h5 class="anim-desc animated fadeIn">Bounce In (left)</h5>
+                <div class="animated square bounceInLeft  "></div>
+            </div>
+            <div class="cell small-4">
+                <h5 class="anim-desc animated fadeIn">Bounce In (top)</h5>
+                <div class="animated circle bounceInUp  "></div>
+            </div>
+            <div class="cell small-4 ">
+                <h5 class="anim-desc animated fadeIn">Bounce In (right)</h5>
+                <div class="animated triangle bounceInRight  "></div>
+            </div>
+        </div>
+        <div class="grid-x grid-x-padding pad-bot">
+            <div class="cell small-4">
+                <h5 class="anim-desc animated fadeIn">Light Speed</h5>
+                <div class="animated circle bg-pink lightSpeedIn  "></div>
+            </div>
+            <div class="cell small-4">
+                <h5 class="anim-desc animated fadeIn">Rotate in</h5>
+                <div class="animated triangle triangle-yg rotateIn  "></div>
+            </div>
+            <div class="cell small-4 ">
+                <h5 class="anim-desc animated fadeIn">Rotate in (angled)</h5> 
+                <div class="animated square bg-lightblue rotateInDownRight  "></div>
+            </div>
+        </div>
+        <div class="grid-x grid-x-padding pad-bot">
+            <div class="cell small-4">
+                <h5 class="anim-desc animated fadeIn">"Jack in the Box"</h5>
+                <div class="animated triangle triangle-yg jackInTheBox  "></div>
+            </div>
+            <div class="cell small-4 ">
+                <h5 class="anim-desc animated fadeIn">Flip in (X)</h5> 
+                <div class="animated square bg-lightblue flipInX  "></div>
+            </div>
+            <div class="cell small-4">
+                <h5 class="anim-desc animated fadeIn">Flip in (Y)</h5>
+                <div class="animated circle bg-pink flipInY  "></div>
+            </div>
+        </div>
+
+        <div class="grid-x grid-x-padding">
+            <div class="cell small-12">
+                <h3 class="anim-entrances-title">Exits</h3>
+            </div>
+        </div>
+        <div class="grid-x grid-x-padding pad-bot">
+            <div class="cell small-4">
+                <h5 class="anim-desc animated fadeIn">Zoom out (left)</h5>
+                <div class="animated square zoomOutLeft  "></div>
+            </div>
+            <div class="cell small-4">
+                <h5 class="anim-desc animated fadeIn">Zoom out</h5>
+                <div class="animated circle zoomOut  "></div>
+            </div>
+            <div class="cell small-4 ">
+                <h5 class="anim-desc animated fadeIn">Zoom out (right)</h5>
+                <div class="animated triangle zoomOutRight  "></div>
+            </div>
+        </div>
+        <div class="grid-x grid-x-padding pad-bot">
+            <div class="cell small-4">
+                <h5 class="anim-desc animated fadeIn">Fade out (left)</h5>
+                <div class="animated circle bg-pink fadeOutLeft  "></div>
+            </div>
+            <div class="cell small-4">
+                <h5 class="anim-desc animated fadeIn">Bounce out</h5>
+                <div class="animated triangle triangle-yg bounceOutDown  "></div>
+            </div>
+            <div class="cell small-4 ">
+                <h5 class="anim-desc animated fadeIn">Fade out (right)</h5> 
+                <div class="animated square bg-lightblue fadeOutRight  "></div>
+            </div>
+        </div>
+
+        <div class="grid-x grid-x-padding" style="padding-top: 60px;">
+            <div class="cell small-12">
+                <h1 class="anim-header">Scroll down...</h1>
+            </div>
+        </div>
+    </div>
+    <div class="grid-container" style="height: 300vh">
+        <div class="grid-x grid-x-padding">
+            <div class="cell small-12">
+                <h3 class="anim-entrances-title">Scrolling Animations</h3>
+            </div>
+        </div>
+        <div class="grid-x grid-x-padding pad-bot">
+            <div class="cell small-4">
+                <h5 class="anim-desc animated fadeIn">Spin</h5>
+                <div class="lax square" data-lax-preset="spin fadeInOut"></div>
+            </div>
+            <div class="cell small-4">
+                <h5 class="anim-desc animated fadeIn">Swing</h5>
+                <div class="lax circle" data-lax-preset="swing fadeInOut"></div>
+            </div>
+            <div class="cell small-4 ">
+                <h5 class="anim-desc animated fadeIn">Drift</h5>
+                <div class="lax triangle " data-lax-preset="driftRight fadeInOut"></div>
+            </div>
+        </div>
+        <div class="grid-x grid-x-padding pad-bot">
+            <div class="cell small-4">
+                <h5 class="anim-desc animated fadeIn">Zoom in/out</h5>
+                <div class="lax circle bg-pink " data-lax-preset="zoomInOut fadeInOut"></div>
+            </div>
+            <div class="cell small-4">
+                <h5 class="anim-desc animated fadeIn">Speedy Drift</h5>
+                <div class="lax triangle triangle-yg " data-lax-preset="driftLeft speedy fadeInOut"></div>
+            </div>
+            <div class="cell small-4 ">
+                <h5 class="anim-desc animated fadeIn">Blur in/out</h5> 
+                <div class="lax square bg-lightblue " data-lax-preset="blurInOut fadeInOut"></div>
+            </div>
+        </div>
+        <div class="gradient-box-down lax" data-lax-preset="fadeIn"></div>
+        <div class="grid-x" style="width: 100%">
+            
+            <div class="cell small-12 background-black">
+                <div class="box-container">
+                    <div class="square-sm lax" data-lax-preset="zoomInOut driftLeft-800"></div>
+                    <div class="square-med lax" data-lax-preset="zoomInOut driftRight-800"></div>
+                    <div class="square-lg lax" data-lax-preset="zoomInOut crazy driftLeft-800" >
+                        <h1 style="font-size: 12em; color: white; text-align: center; padding-top: 25%">CRAZY!!!</h1>
+                    </div>
+                    <div class="square-med lax" data-lax-preset="zoomInOut driftRight-800" ></div>
+                    <div class="square-sm lax" data-lax-preset="zoomInOut driftLeft-800"></div>
+                </div>
+            </div>
+        </div>
+        <div class="gradient-box-up lax" data-lax-preset="fadeOut"></div>
+    </div>
+
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/what-input/dist/what-input.js"></script>
+    <script src="node_modules/foundation-sites/dist/js/foundation.js"></script>
+    <script src="js/app.js"></script>
+    
+  </body>
+</html>
